@@ -1,10 +1,10 @@
 import re
 import numpy as np
 from PIL import Image
-print("Shannon Compression Program")
+print("Shannon Image Compression Program")
 print("=================================================================")
 import collections
-h = int(input("Enter 1 if you want to input an image file, 2 for default case:"))
+h = int(input("Enter 1 if you want to input an colour image file, 2 for default gray scale case:"))
 if h == 1:
     file = input("Enter the filename:")
     my_string = np.asarray(Image.open(file),np.uint8)
@@ -96,14 +96,6 @@ for digit in bitstring:
         pos+=1
 
 print("Your UNCOMPRESSED data is:")
-if h == 2:
-    res = uncompressed_string.strip('][').split(', ')
-    print(res)
-    res = np.array(res)
-    res = np.reshape(res, (1024, 720))
-    print(res)
-    data = Image.fromarray(res)
-    data.save('uncompressed.png')
 if h == 1:
     temp = re.findall(r'\d+', uncompressed_string)
     res = list(map(int, temp))
@@ -115,3 +107,12 @@ if h == 1:
     print(res.shape)
     data = Image.fromarray(res,"RGB")
     data.save('uncompressed.png')
+if h == 2:
+    res = uncompressed_string.strip('][').split(', ')
+    print(res)
+    res = np.array(res)
+    res = np.reshape(res, (1024, 720))
+    print(res)
+    data = Image.fromarray(res)
+    data.save('uncompressed.png')
+    print("Success")
