@@ -8,15 +8,15 @@ h = int(input("Enter 1 if you want to input an colour image file, 2 for default 
 if h == 1:
     file = input("Enter the filename:")
     my_string = np.asarray(Image.open(file),np.uint8)
+    sudhi = my_string
     shape = my_string.shape
-    a = my_string
     print ("Enetered string is:",my_string)
     message = str(my_string.tolist())
 elif h == 2:
     array = np.arange(0, 737280, 1, np.uint8)
     my_string = np.reshape(array, (1024, 720))
     print ("Enetered string is:",my_string)
-    a = my_string
+    sudhi = my_string
     message = str(my_string.tolist())
 else:
     print("You entered invalid input")                        #taking input from user
@@ -100,6 +100,7 @@ if h == 1:
     temp = re.findall(r'\d+', uncompressed_string)
     res = list(map(int, temp))
     res = np.array(res)
+    res = res.astype(np.uint8)
     res = np.reshape(res, shape)
     print(res)
     print("Observe the shapes and input and output arrays are matching or not")
@@ -107,6 +108,8 @@ if h == 1:
     print(res.shape)
     data = Image.fromarray(res,"RGB")
     data.save('uncompressed.png')
+    if sudhi.all() == res.all():
+        print("Success")
 if h == 2:
     res = uncompressed_string.strip('][').split(', ')
     print(res)
