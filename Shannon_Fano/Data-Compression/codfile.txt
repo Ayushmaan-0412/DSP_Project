@@ -1,0 +1,8 @@
+A ||  Freq=1  ||   Codeword=1111
+h ||  Freq=1  ||   Codeword=1110
+m ||  Freq=1  ||   Codeword=110
+n ||  Freq=1  ||   Codeword=101
+s ||  Freq=1  ||   Codeword=100
+u ||  Freq=1  ||   Codeword=011
+y ||  Freq=1  ||   Codeword=010
+a ||  Freq=2  ||   Codeword=00
