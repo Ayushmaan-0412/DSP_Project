@@ -1,4 +1,4 @@
-# Shannon-Fano-Encoding-and-Decoding-for-Image-Compression
+# Shannon-Fano-Image-Compression
 [Input Image](new.jpg)                                                                                                 
 ![Input Image](new.jpg)<br>
 [Output Image](uncompressed.png)                                                                           
